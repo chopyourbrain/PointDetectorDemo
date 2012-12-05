@@ -1,0 +1,151 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>de.lmu.ifi.dbs.jfeaturelib</groupId>
+    <artifactId>Examples</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>JFeatureLib-Examples</name>
+    <description>Examples for JFeatureLib 
+    </description>
+    <url>http://code.google.com/p/jfeaturelib/</url>
+
+    <properties>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <skipSigning>true</skipSigning>
+        <findbugs.version>2.5.2</findbugs.version>
+        <checkstyle.version>2.9.1</checkstyle.version>
+        <surefire.reportplugin.version>2.12.4</surefire.reportplugin.version>
+        <changelog.version>2.2</changelog.version>
+        <javadoc.version>2.9</javadoc.version>
+    </properties>
+    
+    <licenses>
+        <license>
+            <name>GNU General Public License v3</name>
+            <url>http://www.gnu.org/licenses/gpl-3.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    
+    <scm>
+        <url>https://code.google.com/p/jfeaturelib/</url>
+        <connection>scm:git:https://code.google.com/p/jfeaturelib/</connection>
+    </scm>
+    
+    <issueManagement>
+        <system>GoogleCode</system>
+        <url>http://code.google.com/p/jfeaturelib/issues/list</url>
+    </issueManagement>
+    
+    <mailingLists>
+        <mailingList>
+            <name>JFeatureLib User List</name>
+            <subscribe>https://groups.google.com/forum/?fromgroups#!forum/JFeatureLib</subscribe>
+            <unsubscribe>https://groups.google.com/forum/?fromgroups#!forum/JFeatureLib</unsubscribe>
+            <post>jfeaturelib@googlegroups.com</post>
+            <archive>https://groups.google.com/forum/?fromgroups#!forum/JFeatureLib</archive>
+        </mailingList>
+    </mailingLists>
+    
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>gov.nih.imagej</groupId>
+            <artifactId>imagej</artifactId>
+            <version>1.46</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>de.lmu.ifi.dbs.jfeaturelib</groupId>
+            <artifactId>JFeatureLib</artifactId>
+            <version>1.0.1</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <showDeprecation>true</showDeprecation>
+                </configuration>
+            </plugin>
+        
+            <!-- Findbugs Mojo -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <version>${findbugs.version}</version>
+                <configuration>
+                    <xmlOutput>true</xmlOutput>
+                    <!-- Optional directory to put findbugs xdoc xml report -->
+                    <xmlOutputDirectory>target/site/findbugs.report</xmlOutputDirectory>
+                </configuration>
+            </plugin>
+        
+            <!-- Attached source.jar -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Attached javadoc.jar -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Sign jars with pgp -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.4</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <!-- trigger with -DskipSigning=false for pgp signing -->
+                <configuration>
+                    <skip>${skipSigning}</skip>
+                </configuration>
+            </plugin>
+            
+        </plugins>
+    </build>
+
+</project>
