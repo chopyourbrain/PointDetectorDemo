@@ -15,11 +15,11 @@ import javax.imageio.ImageIO;
  *
  * @author Franz
  */
-public class SimpleHaralickDemo {
+public class HaralickDemo {
 
     public static void main(String[] args) throws IOException, URISyntaxException {
         // load the image
-        File f = new File(SimpleHaralickDemo.class.getResource("/test.jpg").toURI());
+        File f = new File(HaralickDemo.class.getResource("/test.jpg").toURI());
         ColorProcessor image = new ColorProcessor(ImageIO.read(f));
 
         // initialize the descriptor

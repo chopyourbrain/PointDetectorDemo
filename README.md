@@ -1,5 +1,5 @@
-JFeatureLib Examples
+JFeatureLib Demos
 =====================
 
-Example files for JFeatureLib
+Demo files for JFeatureLib
 https://jfeaturelib.googlecode.com
