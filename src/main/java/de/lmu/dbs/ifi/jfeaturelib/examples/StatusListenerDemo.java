@@ -2,7 +2,6 @@ package de.lmu.dbs.ifi.jfeaturelib.examples;
 
 import de.lmu.ifi.dbs.jfeaturelib.Progress;
 import de.lmu.ifi.dbs.jfeaturelib.features.Haralick;
-import de.lmu.ifi.dbs.utilities.Arrays2;
 import ij.process.ColorProcessor;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
