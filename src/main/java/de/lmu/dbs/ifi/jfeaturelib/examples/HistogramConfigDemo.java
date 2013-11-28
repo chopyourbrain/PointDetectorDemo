@@ -1,7 +1,6 @@
 package de.lmu.dbs.ifi.jfeaturelib.examples;
 
 import de.lmu.ifi.dbs.jfeaturelib.LibProperties;
-import de.lmu.ifi.dbs.jfeaturelib.features.Haralick;
 import de.lmu.ifi.dbs.jfeaturelib.features.Histogram;
 import de.lmu.ifi.dbs.utilities.Arrays2;
 import ij.process.ColorProcessor;
@@ -12,8 +11,8 @@ import java.util.List;
 import javax.imageio.ImageIO;
 
 /**
- * This is is a very basic class that demonstrates the usage of a descriptor with plain Java and a user defined
- * configuration
+ * This is is a very basic class that demonstrates the usage of a descriptor
+ * with plain Java and a user defined configuration
  *
  * @author Franz
  */

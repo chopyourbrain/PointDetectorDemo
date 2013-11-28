@@ -10,8 +10,8 @@ import java.util.List;
 import javax.imageio.ImageIO;
 
 /**
- * This is is a very basic Class that demonstrates the usage of a descriptor with plain Java without the commandline
- * exctractor.
+ * This is is a very basic Class that demonstrates the usage of a descriptor
+ * with plain Java without the commandline exctractor.
  *
  * @author Franz
  */
