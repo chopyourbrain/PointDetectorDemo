@@ -5,7 +5,7 @@ import de.lmu.ifi.dbs.jfeaturelib.features.Haralick;
 import ij.process.ColorProcessor;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-import java.io.File;
+import java.io.InputStream;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import javax.imageio.ImageIO;
@@ -19,8 +19,8 @@ public class StatusListenerDemo {
 
     public static void main(String[] args) throws IOException, URISyntaxException {
         // load the image
-        File f = new File(StatusListenerDemo.class.getResource("/test.jpg").toURI());
-        ColorProcessor image = new ColorProcessor(ImageIO.read(f));
+        InputStream stream = StatusListenerDemo.class.getClassLoader().getResourceAsStream("test.jpg");
+        ColorProcessor image = new ColorProcessor(ImageIO.read(stream));
 
         // initialize the descriptor, attach the listener and run
         Haralick descriptor = new Haralick();
