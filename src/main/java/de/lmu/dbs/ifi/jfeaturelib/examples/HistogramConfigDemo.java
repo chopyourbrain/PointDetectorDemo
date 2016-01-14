@@ -4,7 +4,7 @@ import de.lmu.ifi.dbs.jfeaturelib.LibProperties;
 import de.lmu.ifi.dbs.jfeaturelib.features.Histogram;
 import de.lmu.ifi.dbs.utilities.Arrays2;
 import ij.process.ColorProcessor;
-import java.io.File;
+import java.io.InputStream;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -20,8 +20,8 @@ public class HistogramConfigDemo {
 
     public static void main(String[] args) throws IOException, URISyntaxException {
         // load the image
-        File f = new File(HistogramConfigDemo.class.getResource("/test.jpg").toURI());
-        ColorProcessor image = new ColorProcessor(ImageIO.read(f));
+        InputStream stream = HistogramConfigDemo.class.getClassLoader().getResourceAsStream("test.jpg");
+        ColorProcessor image = new ColorProcessor(ImageIO.read(stream));
 
         // load the properties from the default properties file
         // change the histogram to span just 2 bins

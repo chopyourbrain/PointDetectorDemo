@@ -54,7 +54,7 @@
         <dependency>
             <groupId>de.lmu.ifi.dbs.jfeaturelib</groupId>
             <artifactId>JFeatureLib</artifactId>
-            <version>1.6.2</version>
+            <version>1.6.3</version>
             <type>jar</type>
         </dependency>
         <dependency>
