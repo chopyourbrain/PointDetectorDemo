@@ -1,0 +1,16 @@
+/build/
+/dist/
+/nbproject/private/
+/nbproject/project.xml
+/nbproject/genfiles.properties
+/target/
+/nb-configuration.xml
+
+# Eclipse IDE
+.classpath
+.project
+.settings/
+/jFeatureLib.log
+/nbactions.xml
+/nbactions-sonatype-oss-release.xml
+/nbproject/
