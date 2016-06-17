@@ -31,13 +31,13 @@
     </licenses>
     
     <scm>
-        <url>https://github.com/locked-fg/JFeatureLib</url>
-        <connection>scm:git:https://github.com/locked-fg/JFeatureLib</connection>
+        <url>https://code.google.com/p/jfeaturelib/</url>
+        <connection>scm:git:https://code.google.com/p/jfeaturelib/</connection>
     </scm>
     
     <issueManagement>
-        <system>GitHub</system>
-        <url>https://github.com/locked-fg/JFeatureLib/issues</url>
+        <system>GoogleCode</system>
+        <url>http://code.google.com/p/jfeaturelib/issues/list</url>
     </issueManagement>
     
     <mailingLists>
