@@ -3,7 +3,7 @@ package de.lmu.dbs.ifi.jfeaturelib.examples;
 import de.lmu.ifi.dbs.jfeaturelib.features.Haralick;
 import de.lmu.ifi.dbs.utilities.Arrays2;
 import ij.process.ColorProcessor;
-import java.io.File;
+import java.io.InputStream;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -19,8 +19,8 @@ public class HaralickDemo {
 
     public static void main(String[] args) throws IOException, URISyntaxException {
         // load the image
-        File f = new File(HaralickDemo.class.getResource("/test.jpg").toURI());
-        ColorProcessor image = new ColorProcessor(ImageIO.read(f));
+        InputStream stream = HaralickDemo.class.getClassLoader().getResourceAsStream("test.jpg");
+        ColorProcessor image = new ColorProcessor(ImageIO.read(stream));
 
         // initialize the descriptor
         Haralick descriptor = new Haralick();

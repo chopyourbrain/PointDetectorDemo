@@ -3,19 +3,13 @@ package de.lmu.dbs.ifi.jfeaturelib.examples;
 import de.lmu.ifi.dbs.jfeaturelib.features.SURF;
 import de.lmu.ifi.dbs.utilities.Arrays2;
 import ij.process.ColorProcessor;
-import java.io.File;
-import java.io.IOException;
 import java.io.InputStream;
+import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
 import javax.imageio.ImageIO;
 
-/**
- * This is is a very basic Class that demonstrates the usage of a descriptor
- * with plain Java without the commandline exctractor.
- *
- * @author Franz
- */
+
 public class SurfDemo {
 
     public static void main(String[] args) throws IOException, URISyntaxException {
