@@ -1,5 +1,5 @@
-JFeatureLib Demos
+JFeatureLib Point Detector Demo
 =====================
 
-Demo files for JFeatureLib
+Demo for JFeatureLib
 https://jfeaturelib.googlecode.com
