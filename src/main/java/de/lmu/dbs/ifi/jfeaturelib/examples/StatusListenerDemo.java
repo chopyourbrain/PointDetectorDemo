@@ -19,7 +19,7 @@ public class StatusListenerDemo {
 
     public static void main(String[] args) throws IOException, URISyntaxException {
         // load the image
-        InputStream stream = StatusListenerDemo.class.getClassLoader().getResourceAsStream("test.jpg");
+        InputStream stream = StatusListenerDemo.class.getClassLoader().getResourceAsStream("test.gif");
         ColorProcessor image = new ColorProcessor(ImageIO.read(stream));
 
         // initialize the descriptor, attach the listener and run
