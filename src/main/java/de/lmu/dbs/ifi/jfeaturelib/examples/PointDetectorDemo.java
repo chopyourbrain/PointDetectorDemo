@@ -20,6 +20,7 @@ import java.util.List;
 
 public class PointDetectorDemo {
     public static void printPixels(BufferedImage img, int x, int y, int color) {
+        try {
         img.setRGB(x, y, color);
         img.setRGB(x + 1, y, color);
         img.setRGB(x, y + 1, color);
@@ -28,14 +29,17 @@ public class PointDetectorDemo {
         img.setRGB(x + 1, y + 1, color);
         img.setRGB(x - 1, y - 1, color);
         img.setRGB(x + 1, y - 1, color);
-        img.setRGB(x - 1, y + 1, color);
+        img.setRGB(x - 1, y + 1, color);}
+        catch (Exception e) {
+            System.out.println("Ne pokrasilos' :(");
+        }
     }
 
     public static void main(String[] args) throws IOException, URISyntaxException {
 
         // load the image
-        File file = new File("//home//mikhail//neural//sonya//JFeatureLib-Demo//src//main//resources//test1.jpg");
-        InputStream stream = StatusListenerDemo.class.getClassLoader().getResourceAsStream("test1.jpg");
+        File file = new File("//home//mikhail//neural//sonya//JFeatureLib-Demo//src//main//resources//test2.jpg");
+        InputStream stream = StatusListenerDemo.class.getClassLoader().getResourceAsStream("test2.jpg");
         ColorProcessor image = new ColorProcessor(ImageIO.read(stream));
         // harris
         BufferedImage imgHarris = ImageIO.read(file);
@@ -45,6 +49,7 @@ public class PointDetectorDemo {
         for (int i = 0; i < imagePoint.size(); i++) {
             System.out.println(imagePoint.get(i).getX());
             System.out.println(imagePoint.get(i).getY());
+            if (( imagePoint.get(i).getX() != 0) && (imagePoint.get(i).getX() != imagePoint.size()) && ( imagePoint.get(i).getY() != 0) && (imagePoint.get(i).getY() != imagePoint.size()) )
             printPixels(imgHarris, (int) imagePoint.get(i).getX(), (int) imagePoint.get(i).getY(), Color.RED.getRGB());
         }
         ImageIO.write(imgHarris, "jpg", new File("harris.jpg"));
