@@ -34,8 +34,8 @@ public class PointDetectorDemo {
     public static void main(String[] args) throws IOException, URISyntaxException {
 
         // load the image
-        File file = new File("//home//mikhail//neural//sonya//JFeatureLib-Demo//target//classes//test.gif");
-        InputStream stream = StatusListenerDemo.class.getClassLoader().getResourceAsStream("test.gif");
+        File file = new File("//home//mikhail//neural//sonya//JFeatureLib-Demo//src//main//resources//test.jpg");
+        InputStream stream = StatusListenerDemo.class.getClassLoader().getResourceAsStream("test.jpg");
         ColorProcessor image = new ColorProcessor(ImageIO.read(stream));
         // harris
         BufferedImage imgHarris = ImageIO.read(file);
